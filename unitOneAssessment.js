@@ -1,60 +1,175 @@
 let assert = require('assert')
 
 // Question One:
-
+console.log('=============Q1==============')
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
 
+const isOdd = (num) =>{
+  if (num %2===1){
+    return true
+  } else {
+    return false
+  }
+}
 
 // Uncomment out the next line to test your solution
-// runQ1Tests()
+ runQ1Tests(isOdd)
 
-
+console.log('==============Q2=============')
 // Question Two:
 
 // Write a function called numberOfDigits that returns how many digits are in a given number
 
-// Uncomment out the next line to test your solution
-// runQ2Tests()
+ const numberOfDigits = (num)=>{
+ let string = num.toString()
+ return string.length
+}
+ console.log(numberOfDigits(43))
 
+// Uncomment out the next line to test your solution
+runQ2Tests()
+console.log("============Q3=============")
 // Question Three:
 
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
 
+const disemvowel = (string) => {
+  let string1 = string.split('')
+  for (let i=0;i < string1.length;i++){
+    if (string1[i] === 'a' || string1[i]=== 'A'){
+      string1[i] = ''
+    } else if (string1[i] === 'e' || string1[i]==='E') {
+      string1[i] = ''
+    } else if (string1[i] === 'i' || string[i]==='I'){
+        string1[i]= ''
+    } else if (string1[i] === 'o' || string[i] === 'O'){
+      string1[i] =''
+    } else if (string1[i] === 'u' || string1[i]=== 'U'){
+      string1[i] = ''
+    }
+    }
+      return string1.join('')
+    }
+1
+//console.log(disemvowel('ateurAtoiEiss'))
+
+
+
 // Uncomment out the next line to test your solution
-// runQ3Tests()
+runQ3Tests(disemvowel)
+console.log('====================Q4===================')
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
 
-// Uncomment out the next line to test your solution
-// runQ4Tests()
 
+// can't get this to work
+let testArray = [7,3,2,8,5,2,3]
+let stupidArray =[5,1,4,2,5,6 ]
+const secondSmallest = (array)=>{
+let smallestValue= array[0]
+let secondSmallest = smallestValue
+for (let i=0; i <array.length;i++){
+  if(smallestValue > array[i]){
+    secondSmallest = array[i]
+    smallestValue = smallestValue
+  }
+}
+return secondSmallest
+}
+console.log(secondSmallest(testArray))
+console.log(secondSmallest(stupidArray))
+
+// couldn't figure out a way to find the second smallest.  [1,10,7,90,5,4])
+
+
+
+
+
+
+// Uncomment out the next line to test your solution
+ runQ4Tests(secondSmallest)
+
+console.log('=====================Q5================')
 // Question Five:
 // Write a function called getLocations that takes in an array of objects that look like the array below,
 // and returns an array of the strings corresponding to the value of the location property
 // The output should be in the same order as the input
 
+
 // Sample input:
-// [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
+let places =  [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
 
 // Sample output:
 // ["Algeria", "Belize", "China", "Denmark"]
 
+const getLocations = (array)=>{
+  let locations = []
+  for (let i = 0; i< array.length; i++){
+     locations.push(array[i].location)
+}
+return locations
+}
+console.log(getLocations(places)) //testing
+
 // Uncomment out the next line to test your solution
-// runQ5Tests()
+ runQ5Tests(getLocations)
 
 
 // Question Six:
-
+console.log('================Q6===============')
 // Write a function called onlyOddStrings that takes in an array of strings as input and returns an array that only includes strings with an odd number of characters
 // Your function should use a higher-ordered function (e.g map, filter, reduce, every, sort) in its implementation
 
+// can't remember how to use those functions right now.
+
+let testingWords = ["food", 'car', 'hat']
+const onlyOddStrings = (array)=>{
+  let odds =[];
+ for (let i =0; i <array.length; i++){
+   if(array[i].length %2===1){
+     odds.push(array[i])
+   }
+ }
+ return odds
+}
+
+console.log(onlyOddStrings(testingWords))
+
+// function undernearth doesn't work - was attempting to use callback.
+// const onlyOddStrings1 = (array,callback) =>{
+//   let odds=[];
+//   for (let i =0; i < array.length; i++){
+//   odds.push(callback(array[i]))
+//   }
+// }
+//
+// const isItOdd = (str) =>{
+//   if(str.length%2 ===1){
+//     return str
+//   }
+// }
+
+// know i can use filter but remember how to write the function.
+// const odd (array.filter((if array[i].length %2 ===1))
+//
+//
+// const odd = (array)=>{array.fitler (array)=>{
+//   if(array[i].length %2 ==1)
+// }
+//   console.log(odd(testingWords))
+
+
+//console.log(onlyOddStrings1(testingWords,isItOdd))
+
 // Uncomment out the next line to test your solution
-// runQ6Tests()
+runQ6Tests(onlyOddStrings)
 
 
+
+console.log('==================Q7==================')
 // Question Seven:
 
 // a.
@@ -62,13 +177,35 @@ let assert = require('assert')
 // Give it two properties set by the constructor named temperature and weather
 // Give it a method named getDescription that returns a string in the format described below
 
+
+// Honestly don't even remmeber how to begin to create a class
+// class Day {
+// function (temperature, weather) {
+//   this.temperature = 90
+//   this.weather = 'hot'
+// }
+// }
+
+
+
+
 // Example
-// let myDay = Day(80, "sunny")
+// let new myDay = Day(80, "sunny")
 // myDay.getDescription() // returns "It is 80 degrees and sunny"
 
 //b.
 // Make a function called getAllDayDescriptions that takes in an array of Day objects and returns an array of their descriptions.  Use a higher-ordered function (e.g map, filter, reduce, every, sort) in your implementation.
 // The output should be in the same order as the input
+
+
+// const getAllDayDescriptions = (array)=>{
+//
+// }
+
+
+
+
+
 
 // Uncomment out the next line to test your solution
 // runQ7Tests()
